@@ -1,6 +1,4 @@
-FROM maven:latest
-WORKDIR /
-COPY src /src
-COPY pom.xml /
-RUN mvn  clean package
-CMD java -cp /target/myproj-1.0-SNAPSHOT.jar com.raman.App
+FROM openjdk
+COPY myproj-1.0-SNAPSHOT.jar /myproj-1.0-SNAPSHOT.jar
+CMD java -cp /myproj-1.0-SNAPSHOT.jar com.raman.App
+
